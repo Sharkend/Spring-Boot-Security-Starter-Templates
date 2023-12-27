@@ -1,0 +1,24 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: JWT-API
+  datasource:
+    url: jdbc:mysql://localhost:3306/secjwt_tut?createDatabaseIfNotExist=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true #display queries in terminal
+    hibernate:
+      ddl-auto: create-drop #start with a fresh db each run
+
+application:
+  security:
+    jwt:
+      secret-key: UFOcfAnM34MYpwSrNFAII77607DOCPrbRcELZoCz8C4bMqNdO9I7tyIfIHCJehlq
+      expiration: 86400000 #one day
+      refresh-token:
+        expiration: 604800000 #one week
+      #Select a property and Ctrl Alt Shift C in Intellij to copy property for injection
